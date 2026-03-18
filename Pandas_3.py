@@ -13,3 +13,5 @@ data.iloc[11:16, data.columns.get_loc("Fare")]= 999
 print(data.loc[11:15, ["Name", "Fare"]])
 data["FarePerPerson"]= data["Fare"]/(data["SibSp"]+ 1)
 print(data[["Name", "FarePerPerson"]].head())
+data["IsAlone"]= (data["SibSp"]== 0) & (data["Parch"])
+print(data.head())
